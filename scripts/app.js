@@ -1,19 +1,19 @@
-console.log("test")
-
-// Api
+// Assemble the full URL
 const baseRoute = "https://api.themoviedb.org/3/trending/all/week"
 const basePosterRoute = "https://image.tmdb.org/t/p/w185"
 const apiKey = "?api_key=20fb29b2c9f122eaa6465a6caf734247"
 
 let trendingMovies
 
-
+// Use fetch() to make the request to the API
 function getMovies() {
   fetch(`${baseRoute}${apiKey}`)
   .then((response) => response.json())
-//   .then((data) => console.log(data));
   .then((data) => trendingMovies = data.results)
-  .then(() => parseMovies(trendingMovies));
+  // .then(() => parseMovies(trendingMovies))
+
+  // Error message in case it does not work 
+  .catch((error) => console.error(`Error fetching data: ${error.message}`));
 }
 
 const trendingMoviesUL = document.getElementById("trending-movies")
@@ -21,7 +21,7 @@ const trendingMoviesUL = document.getElementById("trending-movies")
 function listMovie(trendingMovie) {
   var li = document.createElement("li");
   li.appendChild(document.createTextNode(trendingMovie));
-  return li
+  // return li
 }
 
 function createImgElement(posterPathUrl) {
@@ -29,7 +29,7 @@ function createImgElement(posterPathUrl) {
   var img = document.createElement("img");
   img.setAttribute("src", posterPathUrl);
   // li.appendChild(img);
-  return img
+  // return img
 }
 
 function parseMovies(trendingMovies) {
@@ -51,3 +51,4 @@ function getPosterURL(trendingMovies) {
 }
 
 getMovies()
+console.log("1")
