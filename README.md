@@ -1,2 +1,2 @@
 # apiPractice
-projects to practice APIS and JS
+projects to practice APIs and JS
