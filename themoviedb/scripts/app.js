@@ -12,14 +12,14 @@ function getMovies() {
   .then((data) => trendingMovies = data.results)
   // .then(() => parseMovies(trendingMovies))
 
-  // Error message in case it does not work 
+  // Error message in case it does not work
   .catch((error) => console.error(`Error fetching data: ${error.message}`));
 }
 
 const trendingMoviesUL = document.getElementById("trending-movies")
 
 function listMovie(trendingMovie) {
-  var li = document.createElement("li");
+  let li = document.createElement("li");
   li.appendChild(document.createTextNode(trendingMovie));
   // return li
 }
@@ -51,4 +51,3 @@ function getPosterURL(trendingMovies) {
 }
 
 getMovies()
-console.log("1")

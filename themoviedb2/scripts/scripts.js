@@ -6,23 +6,23 @@ posterPath = "https://image.tmdb.org/t/p/w185"
 // moviesJson contains the result of fetching themoviedb api data
 let moviesJson
 
-console.log("hello")
-
-//
-const trendingMoviesUL = document.getElementById("trending-movies-ul")
+// get the UL id
+const trendingMoviesUl = document.getElementById("trending-movies-ul")
 
 // Function to fetch popular movie data
 function fetchMovies() {
   fetch(`${baseUrl}${apiKey}`)
   .then((response) => response.json())
   // .then((data) => console.log(data));
-  .then((data) => moviesJson = data.results);
+  .then((data) => moviesJson = data.results)
 }
 
 function displayMovies(trendingMovie) {
-  var li = document.createElement(li);
+  let li = document.createElement("li")
   li.appendChild(document.createTextNode(trendingMovie))
-  trendingMoviesUL.appendChild(li)
+  trendingMoviesUl.appendChild(li)
 }
 
 fetchMovies()
+console.log(moviesJson)
+displayMovies()
