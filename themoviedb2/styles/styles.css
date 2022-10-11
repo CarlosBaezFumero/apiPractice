@@ -9,9 +9,10 @@ p {
 
 .movie-grid {
   display: grid;
-  grid-template-columns: fit-content(300px) fit-content(300px) 1fr;
-  grid-gap: 5px;
-  height: 200px;
-  width: 100%;
-  padding: 10px;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  justify-content: space-between;
+}
+
+li {
+  margin-bottom: 16px;
 }

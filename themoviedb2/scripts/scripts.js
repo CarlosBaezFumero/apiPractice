@@ -16,7 +16,7 @@ function fetchMovies() {
       const listItem = document.createElement("li");
 
       const titleElement = document.createElement("p");
-      if (movie.media_type == "movie") {
+      if (movie.media_type === "movie") {
         titleElement.textContent = movie.original_title;
       } else {
         titleElement.textContent = movie.name;
